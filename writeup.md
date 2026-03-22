@@ -46,16 +46,16 @@ I was comfortable with this workflow because I maintained full design authority 
 
 ### Time Breakdown
 
-Total development time: approximately **18–22 people-hours**.
+Total development time: approximately **8-10 people-hours**.
 
 | Phase | Estimated Time |
 |-------|---------------|
-| Data collection & character dataset | 3–4 hrs |
-| Core graph (simulation, rendering, hull) | 4–5 hrs |
-| Faction sidebar & camera focus | 2 hrs |
-| Character cards & Framer Motion animations | 3 hrs |
-| Timeline system & spatial evolution | 4–5 hrs |
-| CSS, polish, and debugging | 2–3 hrs |
+| Data collection & character dataset | 2 hrs |
+| Core graph (simulation, rendering, hull) | 2 hrs |
+| Faction sidebar & camera focus | 1-2 hrs |
+| Character cards & Framer Motion animations | 1-2 hrs |
+| Timeline system & spatial evolution | 1-2 hrs |
+| CSS, polish, and debugging | 1 hrs |
 
 The **timeline system** took the most time. Achieving smooth spatial evolution without resetting the simulation required careful management of D3 force references and alpha values. Getting the edge evolution to feel continuous (rather than on/off) also required several iterations to tune the ramp-in/ramp-out math.
 
