@@ -32,7 +32,7 @@ jobs:
             await page.waitForSelector('.timeline-slider',{timeout:20000});
             await new Promise(r=>setTimeout(r,4500));
             await page.screenshot({path:'docs/screenshots/character-network.png'});
-            await page.evaluate(()=>{const el=document.querySelector('.timeline-slider');el.value='7';el.dispatchEvent(new Event('input',{bubbles:true}));const descriptor=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value'); descriptor.set.call(el,'7');el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));});
+            await page.evaluate(()=>{const marks=[...document.querySelectorAll('.timeline-mark')];if(marks.length!==7)throw new Error('Expected 7 timeline marks, got '+marks.length);marks[6].click();});
             await new Promise(r=>setTimeout(r,4000));
             const year=await page.$eval('.timeline-year-badge',el=>el.textContent);
             if(!year.includes('7'))throw new Error('Timeline failed to advance: '+year);
